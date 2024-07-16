@@ -1,5 +1,5 @@
 # Linux Directory and File System Project
-# ----------------------------------------------------
+
 # Objective
 Create a structured directory and file system using command-line operations and implement specific file manipulations using macros and linking.
 
