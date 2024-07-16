@@ -27,3 +27,6 @@ List files in /etc starting with 'h' or 'j', followed by a vowel.
 Copy files from java directory to comp2311.
 Create and attempt to delete a file in comp242 directory.
 Change permissions for directories and files using specific modes.
+
+# Directory Tree:
+![](Directory_Tree.jpg)
