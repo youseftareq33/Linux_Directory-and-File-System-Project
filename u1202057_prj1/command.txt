@@ -1,0 +1,195 @@
+yousef sharbi
+---------------------------
+
+#Q1:
+
+commands:
+mkdir ./u1202057_prj1
+
+
+touch ./u1202057_prj1/command.txt
+
+mkdir ./u1202057_prj1/mydir   
+mkdir ./u1202057_prj1/mydir/mp3
+touch ./u1202057_prj1/mydir/mp3/Mp3_list.txt
+mkdir ./u1202057_prj1/mydir/info 
+mkdir ./u1202057_prj1/mydir/info/personal
+touch ./u1202057_prj1/mydir/info/personal/best_palaces.txt
+touch ./u1202057_prj1/mydir/info/personal/myInfo.txt 
+vi ./u1202057_prj1/mydir/info/personal/myInfo.txt       # using vi editor, i wrote all info about my self
+mkdir ./u1202057_prj1/mydir/moves 
+touch ./u1202057_prj1/mydir/moves/moves_list.txt
+
+mkdir ./u1202057_prj1/firstsemester 
+mkdir ./u1202057_prj1/firstsemester/myData
+mkdir ./u1202057_prj1/firstsemester/myData/courses
+mkdir ./u1202057_prj1/firstsemester/myData/courses/comp2311
+mkdir ./u1202057_prj1/firstsemester/myData/courses/comp233 
+mkdir ./u1202057_prj1/firstsemester/myData/courses/comp242
+touch ./u1202057_prj1/firstsemester/myData/My_Schedule.txt
+mkdir ./u1202057_prj1/firstsemester/myDocuments      
+mkdir ./u1202057_prj1/firstsemester/myDocuments/f2024
+mkdir ./u1202057_prj1/firstsemester/myDocuments/f2024/linux
+touch ./u1202057_prj1/firstsemester/myDocuments/f2024/linux/final
+mkdir ./u1202057_prj1/firstsemester/myDocuments/f2024/java       
+touch ./u1202057_prj1/firstsemester/myDocuments/f2024/java/projects.
+touch ./u1202057_prj1/firstsemester/myDocuments/f2024/java/practical
+
+to see that work: use command (tree u1202057_prj1) or (ls -R u1202057_prj1)
+
+i used command: tree u1202057_prj1
+
+u1202057_prj1
+├── command.txt
+├── firstsemester
+│   ├── myData
+│   │   ├── courses
+│   │   │   ├── comp2311
+│   │   │   ├── comp233
+│   │   │   └── comp242
+│   │   └── My_Schedule.txt
+│   └── myDocuments
+│       └── f2024
+│           ├── java
+│           │   ├── practical
+│           │   └── projects.
+│           └── linux
+│               └── final
+└── mydir
+    ├── info
+    │   └── personal
+    │       ├── best_palaces.txt
+    │       └── myInfo.txt
+    ├── moves
+    │   └── moves_list.txt
+    └── mp3
+        └── Mp3_list.txt
+
+---------------------------------------------------------------------------------------------------
+#Q2:
+
+
+1) 
+   to use it on insert mode:
+   at first we type multiple line inside vi editor using i <- insert.
+   then use Esc to be in insert mode and write :map! H ^G4dw:w ^M
+   
+   to use it on command mode:
+   :map H G4dw
+   
+  # to delete the last 4 words from that line
+
+
+2)
+   to use it on insert mode:
+   at first we type 10 line inside vi editor using i <- insert.
+   then use Esc to be in insert mode and write :set number <- to see number of line.
+   then write in insert mode :map! W ^[Gkk2yy8GP:w ^M
+   
+   to use it on command mode:
+   :map W Gkk2yy8GP
+   
+   # to copy the last two line and past them above line 8
+
+---------------------------------------------------------------------------------------------------
+#Q3:
+
+(1) hard link (between files): 
+
+command:
+ln ./u1202057_prj1/mydir/info/personal/myInfo.txt ./u1202057_prj1/firstsemester/myDocuments/linkmyInfo
+
+
+
+(2) soft link (between directories):
+
+command:
+ln -s ../../myData/courses u1202057_prj1/firstsemester/myDocuments/f2024/link_courses
+
+
+The difference: 
+ a link file references a specific file, while a directory link provides a shortcut to a
+ directory, allowing indirect access to its contents. Both types of links can be created using
+ relative paths.
+ 
+---------------------------------------------------------------------------------------------------
+#Q4:
+
+i opened the vi editor in best_places.txt and then i write about five places that i have
+visited in palestine.
+
+command: vi ./u1202057_prj1/mydir/info/personal/best_palaces.txt 
+
+
+---------------------------------------------------------------------------------------------------
+#Q5:
+
+A) move to the end of the last line: G$
+
+B) move to the beginning of the 3rd line: 3GG0
+
+C) Copy two lines above the 5th line: 5Gkkk2yy
+
+D) Delete two words before the word “yousef”: 
+   (1) /yousef   #to search for the word "yousef".
+   (2) 2b2dw     #to back two word (2b), then delete thats two words(2dw).
+   
+E) Cut the first two lines and put them above the last line: 
+   (1) 1G2dd     #to cut first two line.
+   (2) GP        #to paste them above last line.
+
+
+---------------------------------------------------------------------------------------------------
+#Q6:
+
+command: ls /etc/[hj][aeiou]*[^aeiou]*
+
+---------------------------------------------------------------------------------------------------
+#Q7:
+
+command: cp ./u1202057_prj1/firstsemester/myDocuments/f2024/java/* ./u1202057_prj1/firstsemester/myData/courses/comp2311/
+
+---------------------------------------------------------------------------------------------------
+#Q8:
+
+no, (rmdir) command can only delete empty directories.
+to delete the comp242 directory along with its contents, you can use the rm -r comp242.
+
+command: touch ./u1202057_prj1/firstsemester/myData/courses/comp242/Queue (create Queue)
+	 rmdir ./u1202057_prj1/firstsemester/myData/courses/comp242 (to delete, it's not work)
+	 rm -r ./u1202057_prj1/firstsemester/myData/courses/comp242 (to delete, it's work)
+
+
+---------------------------------------------------------------------------------------------------
+#Q9:
+
+command: 
+chmod 606 linux
+
+---------------------------------------------------------------------------------------------------
+#Q10:
+
+1) umask 431
+2) umask 521
+3) umask 530
+4) umask 421
+5) umask 520
+6) umask 430
+7) umask 420
+8) umask 531
+
+
+---------------------------------------------------------------------------------------------------
+#Q11:
+
+command:
+
+stat u1202057_prj1/mydir/info/personal/myInfo.txt
+
+or 
+
+ls -l u1202057_prj1/mydir/info/personal/myInfo.txt
+
+
+
+

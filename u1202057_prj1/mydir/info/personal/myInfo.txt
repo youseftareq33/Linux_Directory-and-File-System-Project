@@ -1,0 +1,11 @@
+name: yousef sharbi
+id: 1202057
+
+-------------------------------------
+full name: yousef tareq yousef sharbi
+current address: ramallah
+date of birth: 19/9/2002
+major: computer science
+hopes: football
+resident place: ramallah
+school name: hashemiah school
